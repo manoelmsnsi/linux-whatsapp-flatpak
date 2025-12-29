@@ -13,6 +13,7 @@ finish-args:
   - --filesystem=xdg-download
   - --socket=pulseaudio
   - --filesystem=/dev/video0
+  - --device=all
 
 modules:
   - name: whatsapp
