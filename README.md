@@ -25,13 +25,13 @@ O objetivo do projeto é oferecer uma experiência integrada ao desktop Linux, c
 ### Flatpak (recomendado)
 
 ```bash
-flatpak install flathub io.github.manoelmsnsi.LinuxWhatsappFlatpack
+flatpak install flathub io.github.manoelmsnsi.LinuxWhatsappFlatpak
 ```
 
 Executar:
 
 ```bash
-flatpak run io.github.manoelmsnsi.LinuxWhatsappFlatpack
+flatpak run io.github.manoelmsnsi.LinuxWhatsappFlatpak
 ```
 
 ---
@@ -45,10 +45,39 @@ flatpak run io.github.manoelmsnsi.LinuxWhatsappFlatpack
 - org.gnome.Platform
 - org.gnome.Sdk
 
-### Build local
+### Instalação das dependências
+
+Adicione o repositório Flathub (se ainda não tiver):
+
+```bash
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+```
+
+Instale o runtime e SDK do GNOME:
+
+```bash
+flatpak install flathub org.gnome.Platform//48 org.gnome.Sdk//48
+```
+
+### Build e instalação local
+
+Clone o repositório:
+
+```bash
+git clone https://github.com/manoelmsnsi/linux-whatsapp-flatpak.git
+cd linux-whatsapp-flatpak
+```
+
+Build e instale:
 
 ```bash
 flatpak-builder --user --install --force-clean build-dir manifest.yml
+```
+
+Execute o aplicativo:
+
+```bash
+flatpak run io.github.manoelmsnsi.LinuxWhatsappFlatpak
 ```
 
 ---
